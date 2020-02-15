@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="WowClassic1App.cpp" />
+    <ClCompile Include="ui\MainWindow.cpp">
+      <Filter>ui</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\ChooseOperationWindow.cpp">
+      <Filter>ui</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\IdleOperationController.cpp">
+      <Filter>controller</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\OperationController.cpp">
+      <Filter>controller</Filter>
+    </ClCompile>
+    <ClCompile Include="factory\OperationControllerFactory.cpp">
+      <Filter>factory</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="ui">
+      <UniqueIdentifier>{831a258f-4f46-46cd-9696-305f7afde280}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="enum">
+      <UniqueIdentifier>{2c362004-f419-4571-aeca-cd5e3ba3c930}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="controller">
+      <UniqueIdentifier>{6208fb45-d6ca-4cfc-8dc3-84d733f76b84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="factory">
+      <UniqueIdentifier>{1d45b121-0294-49e4-85e4-3b739f6cf758}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="ui\MainWindow.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="enum\WowOperation.h">
+      <Filter>enum</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\ChooseOperationWindow.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\IdleOperationController.h">
+      <Filter>controller</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\OperationController.h">
+      <Filter>controller</Filter>
+    </ClInclude>
+    <ClInclude Include="factory\OperationControllerFactory.h">
+      <Filter>factory</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="WowClassic1.rc" />
+  </ItemGroup>
+</Project>
