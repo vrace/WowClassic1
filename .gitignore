@@ -1,5 +1,6 @@
 *.suo
 *.sdf
+*.opensdf
 x64/
 Release/
 Debug/

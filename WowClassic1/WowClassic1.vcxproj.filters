@@ -8,15 +8,6 @@
     <ClCompile Include="ui\ChooseOperationWindow.cpp">
       <Filter>ui</Filter>
     </ClCompile>
-    <ClCompile Include="controller\IdleOperationController.cpp">
-      <Filter>controller</Filter>
-    </ClCompile>
-    <ClCompile Include="controller\OperationController.cpp">
-      <Filter>controller</Filter>
-    </ClCompile>
-    <ClCompile Include="factory\OperationControllerFactory.cpp">
-      <Filter>factory</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ui">
@@ -42,15 +33,6 @@
     </ClInclude>
     <ClInclude Include="ui\ChooseOperationWindow.h">
       <Filter>ui</Filter>
-    </ClInclude>
-    <ClInclude Include="controller\IdleOperationController.h">
-      <Filter>controller</Filter>
-    </ClInclude>
-    <ClInclude Include="controller\OperationController.h">
-      <Filter>controller</Filter>
-    </ClInclude>
-    <ClInclude Include="factory\OperationControllerFactory.h">
-      <Filter>factory</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
