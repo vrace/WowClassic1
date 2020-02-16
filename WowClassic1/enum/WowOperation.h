@@ -6,6 +6,8 @@ enum WowOperation
 	woIdle,
 	woQueue,
 	woKeepAlive,
+
+	woOperationCount,
 };
 
 #endif

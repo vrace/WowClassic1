@@ -3,3 +3,7 @@
 void IdleOperationController::tick()
 {
 }
+
+void IdleOperationController::enter()
+{
+}

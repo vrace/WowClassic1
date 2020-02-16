@@ -1,25 +1,41 @@
 #include "MainWindow.h"
 
 #include <Windows.h>
+#include <memory>
 
 #include "../resource.h"
 #include "../enum/WowOperation.h"
+#include "../controller/OperationController.h"
+#include "../controller/IdleOperationController.h"
 #include "ChooseOperationWindow.h"
 
 static WowOperation theOperation = woIdle;
+static std::unique_ptr<OperationController> theControllers[woOperationCount];
 
 void MainWindowInit(HWND hwnd)
 {
+	theControllers[woIdle].reset(new IdleOperationController());
+	theControllers[woQueue].reset(new IdleOperationController());
+	theControllers[woKeepAlive].reset(new IdleOperationController());
+
+	theOperation = woIdle;
+	theControllers[theOperation]->enter();
+
 	HICON hIcon = LoadIcon(NULL, IDI_APPLICATION);
 	SendMessage(hwnd, WM_SETICON, ICON_BIG, (LPARAM)hIcon);
 	SendMessage(hwnd, WM_SETICON, ICON_SMALL, (LPARAM)hIcon);
+
+	SetTimer(hwnd, WM_TIMER + 100, 100, NULL);
 }
 
 void MainWindowChangeOperation(HWND hwnd)
 {
-	int op = ShowChooseOperation(hwnd);
-	if (op >= 0)
-		theOperation = (WowOperation)op;
+	WowOperation op = (WowOperation)ShowChooseOperation(hwnd);
+	if (op >= 0 && op != theOperation)
+	{
+		theOperation = op;
+		theControllers[theOperation]->enter();
+	}
 }
 
 BOOL MainWindowCommand(HWND hwnd, WORD id)
@@ -44,7 +60,7 @@ BOOL MainWindowCommand(HWND hwnd, WORD id)
 
 void MainWindowTick(HWND hwnd)
 {
-
+	theControllers[theOperation]->tick();
 }
 
 INT_PTR CALLBACK MainWindowProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
