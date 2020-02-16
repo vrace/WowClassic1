@@ -141,11 +141,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="controller\IdleOperationController.cpp" />
+    <ClCompile Include="controller\OperationController.cpp" />
     <ClCompile Include="ui\ChooseOperationWindow.cpp" />
     <ClCompile Include="ui\MainWindow.cpp" />
     <ClCompile Include="WowClassic1App.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="controller\IdleOperationController.h" />
+    <ClInclude Include="controller\OperationController.h" />
     <ClInclude Include="enum\WowOperation.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="ui\ChooseOperationWindow.h" />
