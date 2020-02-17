@@ -4,10 +4,11 @@
 
 void KeepAliveOperationController::enter()
 {
-	// TODO
+	currentAction.reset(new KeepAliveOperationJumpAction());
 }
 
 void KeepAliveOperationController::tick()
 {
-	// TODO
+	if (currentAction)
+		currentAction->tick();
 }

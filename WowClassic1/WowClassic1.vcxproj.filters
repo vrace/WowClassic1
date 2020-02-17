@@ -17,6 +17,9 @@
     <ClCompile Include="controller\KeepAliveOperationController.cpp">
       <Filter>controller</Filter>
     </ClCompile>
+    <ClCompile Include="action\KeepAliveOperationJumpAction.cpp">
+      <Filter>action</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ui">
@@ -30,6 +33,9 @@
     </Filter>
     <Filter Include="factory">
       <UniqueIdentifier>{1d45b121-0294-49e4-85e4-3b739f6cf758}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="action">
+      <UniqueIdentifier>{46403d46-ef29-4470-99b2-686896564320}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -51,6 +57,9 @@
     </ClInclude>
     <ClInclude Include="controller\KeepAliveOperationController.h">
       <Filter>controller</Filter>
+    </ClInclude>
+    <ClInclude Include="action\KeepAliveOperationJumpAction.h">
+      <Filter>action</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
