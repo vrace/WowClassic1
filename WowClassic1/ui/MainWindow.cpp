@@ -7,6 +7,7 @@
 #include "../enum/WowOperation.h"
 #include "../controller/OperationController.h"
 #include "../controller/IdleOperationController.h"
+#include "../controller/KeepAliveOperationController.h"
 #include "ChooseOperationWindow.h"
 
 static WowOperation theOperation = woIdle;
@@ -16,7 +17,7 @@ void MainWindowInit(HWND hwnd)
 {
 	theControllers[woIdle].reset(new IdleOperationController());
 	theControllers[woQueue].reset(new IdleOperationController());
-	theControllers[woKeepAlive].reset(new IdleOperationController());
+	theControllers[woKeepAlive].reset(new KeepAliveOperationController());
 
 	theOperation = woIdle;
 	theControllers[theOperation]->enter();

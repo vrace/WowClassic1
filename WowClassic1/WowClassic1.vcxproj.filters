@@ -14,6 +14,9 @@
     <ClCompile Include="controller\IdleOperationController.cpp">
       <Filter>controller</Filter>
     </ClCompile>
+    <ClCompile Include="controller\KeepAliveOperationController.cpp">
+      <Filter>controller</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ui">
@@ -44,6 +47,9 @@
       <Filter>controller</Filter>
     </ClInclude>
     <ClInclude Include="controller\IdleOperationController.h">
+      <Filter>controller</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\KeepAliveOperationController.h">
       <Filter>controller</Filter>
     </ClInclude>
   </ItemGroup>

@@ -142,6 +142,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="controller\IdleOperationController.cpp" />
+    <ClCompile Include="controller\KeepAliveOperationController.cpp" />
     <ClCompile Include="controller\OperationController.cpp" />
     <ClCompile Include="ui\ChooseOperationWindow.cpp" />
     <ClCompile Include="ui\MainWindow.cpp" />
@@ -149,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller\IdleOperationController.h" />
+    <ClInclude Include="controller\KeepAliveOperationController.h" />
     <ClInclude Include="controller\OperationController.h" />
     <ClInclude Include="enum\WowOperation.h" />
     <ClInclude Include="resource.h" />
