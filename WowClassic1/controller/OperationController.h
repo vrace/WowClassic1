@@ -5,7 +5,7 @@ class OperationController
 {
 public:
 	virtual ~OperationController();
-	virtual void tick() = 0;
+	virtual void tick(double deltaSeconds) = 0;
 	virtual void enter() = 0;
 };
 

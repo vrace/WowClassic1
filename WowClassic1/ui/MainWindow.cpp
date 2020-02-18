@@ -12,6 +12,8 @@
 
 static WowOperation theOperation = woIdle;
 static std::unique_ptr<OperationController> theControllers[woOperationCount];
+static LARGE_INTEGER theFrequency;
+static LARGE_INTEGER theTick;
 
 void MainWindowInit(HWND hwnd)
 {
@@ -21,6 +23,9 @@ void MainWindowInit(HWND hwnd)
 
 	theOperation = woIdle;
 	theControllers[theOperation]->enter();
+
+	QueryPerformanceFrequency(&theFrequency);
+	QueryPerformanceCounter(&theTick);
 
 	HICON hIcon = LoadIcon(NULL, IDI_APPLICATION);
 	SendMessage(hwnd, WM_SETICON, ICON_BIG, (LPARAM)hIcon);
@@ -61,7 +66,13 @@ BOOL MainWindowCommand(HWND hwnd, WORD id)
 
 void MainWindowTick(HWND hwnd)
 {
-	theControllers[theOperation]->tick();
+	LARGE_INTEGER current;
+	QueryPerformanceCounter(&current);
+
+	double elapsed = (double)(current.QuadPart - theTick.QuadPart) / (double)theFrequency.QuadPart;
+	theControllers[theOperation]->tick(elapsed);
+
+	theTick = current;
 }
 
 INT_PTR CALLBACK MainWindowProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)

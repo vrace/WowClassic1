@@ -5,7 +5,7 @@ class KeepAliveOperationAction
 {
 public:
 	virtual ~KeepAliveOperationAction();
-	virtual void tick() = 0;
+	virtual void tick(double deltaSeconds) = 0;
 	virtual bool isComplete() = 0;
 };
 

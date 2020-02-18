@@ -26,6 +26,9 @@
     <ClCompile Include="action\KeepAliveOperationAction.cpp">
       <Filter>action</Filter>
     </ClCompile>
+    <ClCompile Include="factory\KeepAliveOperationActionFactory.cpp">
+      <Filter>factory</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ui">
@@ -72,6 +75,9 @@
     </ClInclude>
     <ClInclude Include="action\KeepAliveOperationAction.h">
       <Filter>action</Filter>
+    </ClInclude>
+    <ClInclude Include="factory\KeepAliveOperationActionFactory.h">
+      <Filter>factory</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

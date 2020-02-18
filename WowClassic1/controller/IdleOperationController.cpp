@@ -1,6 +1,6 @@
 #include "IdleOperationController.h"
 
-void IdleOperationController::tick()
+void IdleOperationController::tick(double deltaSeconds)
 {
 }
 

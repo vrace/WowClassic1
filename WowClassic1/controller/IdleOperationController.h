@@ -6,7 +6,7 @@
 class IdleOperationController : public OperationController
 {
 public:
-	void tick() override;
+	void tick(double deltaSeconds) override;
 	void enter() override;
 };
 

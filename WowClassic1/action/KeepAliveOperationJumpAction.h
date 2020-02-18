@@ -7,12 +7,13 @@ class KeepAliveOperationJumpAction : public KeepAliveOperationAction
 {
 public:
 	KeepAliveOperationJumpAction();
-	void tick() override;
+	void tick(double deltaSeconds) override;
 	bool isComplete() override;
 
 private:
-	int elapsed;
-	int totalTicks;
+	int keyStatus;
+	double elapsed;
+	double actionMax;
 };
 
 #endif

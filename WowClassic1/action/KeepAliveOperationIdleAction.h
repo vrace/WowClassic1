@@ -3,16 +3,16 @@
 
 #include "KeepAliveOperationAction.h"
 
-class KeepAliveOperationIdleAction : public KeepAliveOperationAction
+class KeepAliveOperationIdleAction : public   KeepAliveOperationAction
 {
 public:
-	KeepAliveOperationIdleAction(int idleTicks = 100);
-	void tick() override;
+	KeepAliveOperationIdleAction(double idleMax);
+	void tick(double deltaSeconds) override;
 	bool isComplete() override;
 
 private:
-	int elapsed;
-	int idleTicks;
+	double elapsed;
+	double idleMax;
 };
 
 #endif

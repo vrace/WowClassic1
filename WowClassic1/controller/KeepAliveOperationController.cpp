@@ -4,11 +4,15 @@
 
 void KeepAliveOperationController::enter()
 {
-	currentAction.reset(new KeepAliveOperationJumpAction());
+	actionFactory.enter();
+	currentAction.reset(actionFactory.create());
 }
 
-void KeepAliveOperationController::tick()
+void KeepAliveOperationController::tick(double deltaSeconds)
 {
 	if (currentAction)
-		currentAction->tick();
+		currentAction->tick(deltaSeconds);
+
+	if (!currentAction || currentAction->isComplete())
+		currentAction.reset(actionFactory.create());
 }

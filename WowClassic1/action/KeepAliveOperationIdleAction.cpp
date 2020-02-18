@@ -1,17 +1,17 @@
 #include "KeepAliveOperationIdleAction.h"
 
-KeepAliveOperationIdleAction::KeepAliveOperationIdleAction(int _idleTicks)
-	: idleTicks(_idleTicks)
+KeepAliveOperationIdleAction::KeepAliveOperationIdleAction(double _idleMax)
+	: idleMax(_idleMax)
 	, elapsed(0)
 {
 }
 
-void KeepAliveOperationIdleAction::tick()
+void KeepAliveOperationIdleAction::tick(double deltaSeconds)
 {
-	elapsed++;
+	elapsed += deltaSeconds;
 }
 
 bool KeepAliveOperationIdleAction::isComplete()
 {
-	return elapsed >= idleTicks;
+	return elapsed >= idleMax;
 }
