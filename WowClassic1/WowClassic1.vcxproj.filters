@@ -20,6 +20,9 @@
     <ClCompile Include="action\KeepAliveOperationJumpAction.cpp">
       <Filter>action</Filter>
     </ClCompile>
+    <ClCompile Include="action\KeepAliveOperationIdleAction.cpp">
+      <Filter>action</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ui">
@@ -59,6 +62,9 @@
       <Filter>controller</Filter>
     </ClInclude>
     <ClInclude Include="action\KeepAliveOperationJumpAction.h">
+      <Filter>action</Filter>
+    </ClInclude>
+    <ClInclude Include="action\KeepAliveOperationIdleAction.h">
       <Filter>action</Filter>
     </ClInclude>
   </ItemGroup>

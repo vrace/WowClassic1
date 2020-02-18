@@ -141,6 +141,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="action\KeepAliveOperationIdleAction.cpp" />
     <ClCompile Include="action\KeepAliveOperationJumpAction.cpp" />
     <ClCompile Include="controller\IdleOperationController.cpp" />
     <ClCompile Include="controller\KeepAliveOperationController.cpp" />
@@ -150,6 +151,7 @@
     <ClCompile Include="WowClassic1App.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="action\KeepAliveOperationIdleAction.h" />
     <ClInclude Include="action\KeepAliveOperationJumpAction.h" />
     <ClInclude Include="controller\IdleOperationController.h" />
     <ClInclude Include="controller\KeepAliveOperationController.h" />
