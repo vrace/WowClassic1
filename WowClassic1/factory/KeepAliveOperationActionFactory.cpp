@@ -39,5 +39,5 @@ KeepAliveOperationAction* KeepAliveOperationActionFactory::create()
 		break;
 	}
 
-	return new KeepAliveOperationIdleAction(1000);
+	return new KeepAliveOperationIdleAction(10);
 }

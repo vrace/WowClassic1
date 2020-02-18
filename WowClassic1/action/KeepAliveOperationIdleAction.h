@@ -3,7 +3,7 @@
 
 #include "KeepAliveOperationAction.h"
 
-class KeepAliveOperationIdleAction : public   KeepAliveOperationAction
+class KeepAliveOperationIdleAction : public KeepAliveOperationAction
 {
 public:
 	KeepAliveOperationIdleAction(double idleMax);
