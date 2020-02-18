@@ -3,30 +3,26 @@
 #include <Windows.h>
 
 KeepAliveOperationJumpAction::KeepAliveOperationJumpAction()
-	: currentTick(2)
+	: elapsed(0)
+	, totalTicks(2 + rand() % 10)
 {
-
 }
 
 void KeepAliveOperationJumpAction::tick()
 {
-	currentTick++;
+	elapsed++;
 
-	switch (currentTick)
+	if (elapsed == 1)
 	{
-	case 1:
 		keybd_event(VK_SPACE, 0, 0, NULL);
-		break;
-
-	case 2:
-		keybd_event(VK_SPACE, 0, KEYEVENTF_KEYUP, NULL);
-		break;
-
-	case 100:
-		currentTick = 0;
-		break;
-
-	default:
-		break;
 	}
+	else if (elapsed == totalTicks)
+	{
+		keybd_event(VK_SPACE, 0, KEYEVENTF_KEYUP, NULL);
+	}
+}
+
+bool KeepAliveOperationJumpAction::isComplete()
+{
+	return elapsed >= totalTicks;
 }
