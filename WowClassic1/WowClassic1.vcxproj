@@ -146,6 +146,8 @@
     <ClCompile Include="action\KeepAliveOperationIdleAction.cpp" />
     <ClCompile Include="action\KeepAliveOperationJumpAction.cpp" />
     <ClCompile Include="action\KeepAliveOperationSequenceAction.cpp" />
+    <ClCompile Include="action\KeepAliveOperationSequenceActionSteps.cpp" />
+    <ClCompile Include="action\KeepAliveOperationSequenceActionStepsImpl.cpp" />
     <ClCompile Include="controller\IdleOperationController.cpp" />
     <ClCompile Include="controller\KeepAliveOperationController.cpp" />
     <ClCompile Include="controller\OperationController.cpp" />
@@ -164,6 +166,8 @@
     <ClInclude Include="action\KeepAliveOperationIdleAction.h" />
     <ClInclude Include="action\KeepAliveOperationJumpAction.h" />
     <ClInclude Include="action\KeepAliveOperationSequenceAction.h" />
+    <ClInclude Include="action\KeepAliveOperationSequenceActionSteps.h" />
+    <ClInclude Include="action\KeepAliveOperationSequenceActionStepsImpl.h" />
     <ClInclude Include="controller\IdleOperationController.h" />
     <ClInclude Include="controller\KeepAliveOperationController.h" />
     <ClInclude Include="controller\OperationController.h" />

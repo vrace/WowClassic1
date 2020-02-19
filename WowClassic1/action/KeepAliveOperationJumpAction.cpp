@@ -1,31 +1,14 @@
 #include "KeepAliveOperationJumpAction.h"
+#include "../step/KeepAliveOperationActionKeyDownStep.h"
+#include "../step/KeepAliveOperationActionKeyUpStep.h"
+#include "../step/KeepAliveOperationActionWaitStep.h"
 
 #include <Windows.h>
 
 KeepAliveOperationJumpAction::KeepAliveOperationJumpAction()
-	: keyStatus(0)
-	, elapsed(0)
-	, actionMax((200 + rand() % 300) / 1000.0)
+	: KeepAliveOperationSequenceAction(&steps)
 {
-}
-
-void KeepAliveOperationJumpAction::tick(double deltaSeconds)
-{
-	elapsed += deltaSeconds;
-
-	if (!keyStatus)
-	{
-		keybd_event(VK_SPACE, 0, 0, NULL);
-		keyStatus++;
-	}
-	else if (keyStatus == 1 && elapsed >= actionMax)
-	{
-		keybd_event(VK_SPACE, 0, KEYEVENTF_KEYUP, NULL);
-		keyStatus++;
-	}
-}
-
-bool KeepAliveOperationJumpAction::isComplete()
-{
-	return keyStatus >= 2 && elapsed >= actionMax;
+	steps.add(new KeepAliveOperationActionKeyDownStep(VK_SPACE));
+	steps.add(new KeepAliveOperationActionWaitStep((1000 + rand() % 3000) / 1000.0));
+	steps.add(new KeepAliveOperationActionKeyUpStep(VK_SPACE));
 }

@@ -47,6 +47,12 @@
     <ClCompile Include="step\KeepAliveOperationActionKeyUpStep.cpp">
       <Filter>step</Filter>
     </ClCompile>
+    <ClCompile Include="action\KeepAliveOperationSequenceActionSteps.cpp">
+      <Filter>action</Filter>
+    </ClCompile>
+    <ClCompile Include="action\KeepAliveOperationSequenceActionStepsImpl.cpp">
+      <Filter>action</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ui">
@@ -117,6 +123,12 @@
     </ClInclude>
     <ClInclude Include="step\KeepAliveOperationActionKeyUpStep.h">
       <Filter>step</Filter>
+    </ClInclude>
+    <ClInclude Include="action\KeepAliveOperationSequenceActionSteps.h">
+      <Filter>action</Filter>
+    </ClInclude>
+    <ClInclude Include="action\KeepAliveOperationSequenceActionStepsImpl.h">
+      <Filter>action</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
