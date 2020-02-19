@@ -1,6 +1,7 @@
 #include "KeepAliveOperationActionFactory.h"
 #include "../action/KeepAliveOperationIdleAction.h"
 #include "../action/KeepAliveOperationJumpAction.h"
+#include "../action/KeepAliveOperationForwardAction.h"
 
 #include <stdlib.h>
 
@@ -8,6 +9,7 @@ static enum AvailableAction
 {
 	aaIdle,
 	aaJump,
+	aaForward,
 
 	aaItemCount,
 };
@@ -34,6 +36,9 @@ KeepAliveOperationAction* KeepAliveOperationActionFactory::create()
 
 	case aaJump:
 		return new KeepAliveOperationJumpAction();
+
+	case aaForward:
+		return new KeepAliveOperationForwardAction();
 
 	default:
 		break;
