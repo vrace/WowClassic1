@@ -3,29 +3,53 @@
 #include <Windows.h>
 
 KeepAliveOperationForwardAction::KeepAliveOperationForwardAction()
-	: keyStatus(0)
-	, elapsed(0)
-	, actionMax((200 + rand() % 300) / 1000.0)
+	: KeepAliveOperationSequenceAction(&steps)
 {
 }
 
-void KeepAliveOperationForwardAction::tick(double deltaSeconds)
+KeepAliveOperationForwardActionSteps::KeepAliveOperationForwardActionSteps()
+	: waitPeriod((200 + rand() % 300) / 1000.0)
 {
-	elapsed += deltaSeconds;
+}
 
-	if (!keyStatus)
+int KeepAliveOperationForwardActionSteps::numberOfSteps()
+{
+	return 3;
+}
+
+double KeepAliveOperationForwardActionSteps::expectedDurationForStepAtIndex(int index)
+{
+	switch (index)
 	{
+	case 0:
+		return 0;
+
+	case 1:
+		return waitPeriod;
+
+	case 2:
+		return 0;
+
+	default:
+		break;
+	}
+
+	return 0;
+}
+
+void KeepAliveOperationForwardActionSteps::performStepAtIndex(int index)
+{
+	switch (index)
+	{
+	case 0:
 		keybd_event('W', 0, 0, NULL);
-		keyStatus++;
-	}
-	else if (keyStatus == 1 && elapsed >= actionMax)
-	{
-		keybd_event('W', 0, KEYEVENTF_KEYUP, NULL);
-		keyStatus++;
-	}
-}
+		break;
 
-bool KeepAliveOperationForwardAction::isComplete()
-{
-	return keyStatus >= 2 && elapsed >= actionMax;
+	case 2:
+		keybd_event('W', 0, KEYEVENTF_KEYUP, NULL);
+		break;
+
+	default:
+		break;
+	}
 }

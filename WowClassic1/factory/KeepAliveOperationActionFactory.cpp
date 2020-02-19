@@ -1,5 +1,6 @@
 #include "KeepAliveOperationActionFactory.h"
 #include "../action/KeepAliveOperationIdleAction.h"
+#include "../action/KeepAliveOperationSequenceAction.h"
 #include "../action/KeepAliveOperationJumpAction.h"
 #include "../action/KeepAliveOperationForwardAction.h"
 

@@ -1,19 +1,28 @@
 #ifndef __KEEP_ALIVE_OPERATION_FORWARD_ACTION_H__
 #define __KEEP_ALIVE_OPERATION_FORWARD_ACTION_H__
 
-#include "KeepAliveOperationAction.h"
+#include "KeepAliveOperationSequenceAction.h"
 
-class KeepAliveOperationForwardAction : public KeepAliveOperationAction
+class KeepAliveOperationForwardActionSteps : public KeepAliveOperationSequenceActionSteps
+{
+public:
+	KeepAliveOperationForwardActionSteps();
+
+	int numberOfSteps() override;
+	double expectedDurationForStepAtIndex(int index) override;
+	void performStepAtIndex(int index) override;
+
+private:
+	double waitPeriod;
+};
+
+class KeepAliveOperationForwardAction : public KeepAliveOperationSequenceAction
 {
 public:
 	KeepAliveOperationForwardAction();
-	void tick(double deltaSeconds) override;
-	bool isComplete() override;
 
 private:
-	int keyStatus;
-	double elapsed;
-	double actionMax;
+	KeepAliveOperationForwardActionSteps steps;
 };
 
 #endif

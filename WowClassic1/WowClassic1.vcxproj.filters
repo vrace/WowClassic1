@@ -32,6 +32,9 @@
     <ClCompile Include="action\KeepAliveOperationForwardAction.cpp">
       <Filter>action</Filter>
     </ClCompile>
+    <ClCompile Include="action\KeepAliveOperationSequenceAction.cpp">
+      <Filter>action</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ui">
@@ -83,6 +86,9 @@
       <Filter>factory</Filter>
     </ClInclude>
     <ClInclude Include="action\KeepAliveOperationForwardAction.h">
+      <Filter>action</Filter>
+    </ClInclude>
+    <ClInclude Include="action\KeepAliveOperationSequenceAction.h">
       <Filter>action</Filter>
     </ClInclude>
   </ItemGroup>
