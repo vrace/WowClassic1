@@ -35,6 +35,18 @@
     <ClCompile Include="action\KeepAliveOperationSequenceAction.cpp">
       <Filter>action</Filter>
     </ClCompile>
+    <ClCompile Include="step\KeepAliveOperationActionStep.cpp">
+      <Filter>step</Filter>
+    </ClCompile>
+    <ClCompile Include="step\KeepAliveOperationActionWaitStep.cpp">
+      <Filter>step</Filter>
+    </ClCompile>
+    <ClCompile Include="step\KeepAliveOperationActionKeyDownStep.cpp">
+      <Filter>step</Filter>
+    </ClCompile>
+    <ClCompile Include="step\KeepAliveOperationActionKeyUpStep.cpp">
+      <Filter>step</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ui">
@@ -51,6 +63,9 @@
     </Filter>
     <Filter Include="action">
       <UniqueIdentifier>{46403d46-ef29-4470-99b2-686896564320}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="step">
+      <UniqueIdentifier>{2d93ea5b-cb16-4884-9308-9cb86f1a9623}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -90,6 +105,18 @@
     </ClInclude>
     <ClInclude Include="action\KeepAliveOperationSequenceAction.h">
       <Filter>action</Filter>
+    </ClInclude>
+    <ClInclude Include="step\KeepAliveOperationActionStep.h">
+      <Filter>step</Filter>
+    </ClInclude>
+    <ClInclude Include="step\KeepAliveOperationActionWaitStep.h">
+      <Filter>step</Filter>
+    </ClInclude>
+    <ClInclude Include="step\KeepAliveOperationActionKeyDownStep.h">
+      <Filter>step</Filter>
+    </ClInclude>
+    <ClInclude Include="step\KeepAliveOperationActionKeyUpStep.h">
+      <Filter>step</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

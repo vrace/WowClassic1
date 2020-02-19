@@ -1,4 +1,7 @@
 #include "KeepAliveOperationForwardAction.h"
+#include "../step/KeepAliveOperationActionKeyDownStep.h"
+#include "../step/KeepAliveOperationActionKeyUpStep.h"
+#include "../step/KeepAliveOperationActionWaitStep.h"
 
 #include <Windows.h>
 
@@ -8,48 +11,32 @@ KeepAliveOperationForwardAction::KeepAliveOperationForwardAction()
 }
 
 KeepAliveOperationForwardActionSteps::KeepAliveOperationForwardActionSteps()
-	: waitPeriod((200 + rand() % 300) / 1000.0)
 {
+	steps.push_back(new KeepAliveOperationActionKeyDownStep('W'));
+	steps.push_back(new KeepAliveOperationActionWaitStep((200 + rand() % 300) / 1000.0));
+	steps.push_back(new KeepAliveOperationActionKeyUpStep('W'));
+}
+
+KeepAliveOperationForwardActionSteps::~KeepAliveOperationForwardActionSteps()
+{
+	for (auto p : steps)
+		delete p;
+	steps.clear();
 }
 
 int KeepAliveOperationForwardActionSteps::numberOfSteps()
 {
-	return 3;
+	return (int)steps.size();
 }
 
 double KeepAliveOperationForwardActionSteps::expectedDurationForStepAtIndex(int index)
 {
-	switch (index)
-	{
-	case 0:
-		return 0;
-
-	case 1:
-		return waitPeriod;
-
-	case 2:
-		return 0;
-
-	default:
-		break;
-	}
-
-	return 0;
+	// TODO: sanity check
+	return steps[index]->expectedDuration();
 }
 
 void KeepAliveOperationForwardActionSteps::performStepAtIndex(int index)
 {
-	switch (index)
-	{
-	case 0:
-		keybd_event('W', 0, 0, NULL);
-		break;
-
-	case 2:
-		keybd_event('W', 0, KEYEVENTF_KEYUP, NULL);
-		break;
-
-	default:
-		break;
-	}
+	// TODO: sanity check
+	return steps[index]->perform();
 }

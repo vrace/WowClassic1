@@ -150,6 +150,10 @@
     <ClCompile Include="controller\KeepAliveOperationController.cpp" />
     <ClCompile Include="controller\OperationController.cpp" />
     <ClCompile Include="factory\KeepAliveOperationActionFactory.cpp" />
+    <ClCompile Include="step\KeepAliveOperationActionKeyDownStep.cpp" />
+    <ClCompile Include="step\KeepAliveOperationActionKeyUpStep.cpp" />
+    <ClCompile Include="step\KeepAliveOperationActionStep.cpp" />
+    <ClCompile Include="step\KeepAliveOperationActionWaitStep.cpp" />
     <ClCompile Include="ui\ChooseOperationWindow.cpp" />
     <ClCompile Include="ui\MainWindow.cpp" />
     <ClCompile Include="WowClassic1App.cpp" />
@@ -166,6 +170,10 @@
     <ClInclude Include="enum\WowOperation.h" />
     <ClInclude Include="factory\KeepAliveOperationActionFactory.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="step\KeepAliveOperationActionKeyDownStep.h" />
+    <ClInclude Include="step\KeepAliveOperationActionKeyUpStep.h" />
+    <ClInclude Include="step\KeepAliveOperationActionStep.h" />
+    <ClInclude Include="step\KeepAliveOperationActionWaitStep.h" />
     <ClInclude Include="ui\ChooseOperationWindow.h" />
     <ClInclude Include="ui\MainWindow.h" />
   </ItemGroup>
