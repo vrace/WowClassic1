@@ -2,7 +2,6 @@
 #define __KEEP_ALIVE_OPERATION_CONTROLLER_H__
 
 #include "OperationController.h"
-#include "../action/KeepAliveOperationAction.h"
 #include "../factory/KeepAliveOperationActionFactory.h"
 #include <memory>
 
@@ -13,7 +12,7 @@ public:
 	void enter() override;
 
 private:
-	std::unique_ptr<KeepAliveOperationAction> currentAction;
+	std::unique_ptr<OperationAction> currentAction;
 	KeepAliveOperationActionFactory actionFactory;
 };
 

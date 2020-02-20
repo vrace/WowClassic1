@@ -1,10 +1,8 @@
 #include "KeepAliveOperationActionFactory.h"
-#include "../action/KeepAliveOperationIdleAction.h"
-#include "../action/KeepAliveOperationSequenceAction.h"
-#include "../action/KeepAliveOperationJumpAction.h"
-#include "../action/KeepAliveOperationForwardAction.h"
+#include "../action/OperationKeyPressAction.h"
+#include "../action/OperationWaitAction.h"
 
-#include <stdlib.h>
+#include <Windows.h>
 
 static enum AvailableAction
 {
@@ -25,7 +23,7 @@ void KeepAliveOperationActionFactory::enter()
 	shouldIdle = true;
 }
 
-KeepAliveOperationAction* KeepAliveOperationActionFactory::create()
+OperationAction* KeepAliveOperationActionFactory::create()
 {
 	int idx = shouldIdle ? 0 : 1 + rand() % (aaItemCount - 1);
 	shouldIdle = !shouldIdle;
@@ -33,17 +31,17 @@ KeepAliveOperationAction* KeepAliveOperationActionFactory::create()
 	switch (idx)
 	{
 	case aaIdle:
-		return new KeepAliveOperationIdleAction(10.0 + (rand() % 1000) / 100.0);
+		return new OperationWaitAction(10.0 + (rand() % 1000) / 100.0);
 
 	case aaJump:
-		return new KeepAliveOperationJumpAction();
+		return new OperationKeyPressAction(VK_SPACE);
 
 	case aaForward:
-		return new KeepAliveOperationForwardAction();
+		return new OperationKeyPressAction('W');
 
 	default:
 		break;
 	}
 
-	return new KeepAliveOperationIdleAction(10);
+	return new OperationWaitAction(10);
 }

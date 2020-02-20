@@ -17,40 +17,25 @@
     <ClCompile Include="controller\KeepAliveOperationController.cpp">
       <Filter>controller</Filter>
     </ClCompile>
-    <ClCompile Include="action\KeepAliveOperationJumpAction.cpp">
-      <Filter>action</Filter>
-    </ClCompile>
-    <ClCompile Include="action\KeepAliveOperationIdleAction.cpp">
-      <Filter>action</Filter>
-    </ClCompile>
-    <ClCompile Include="action\KeepAliveOperationAction.cpp">
-      <Filter>action</Filter>
-    </ClCompile>
     <ClCompile Include="factory\KeepAliveOperationActionFactory.cpp">
       <Filter>factory</Filter>
     </ClCompile>
-    <ClCompile Include="action\KeepAliveOperationForwardAction.cpp">
+    <ClCompile Include="action\OperationAction.cpp">
       <Filter>action</Filter>
     </ClCompile>
-    <ClCompile Include="action\KeepAliveOperationSequenceAction.cpp">
+    <ClCompile Include="action\OperationWaitAction.cpp">
       <Filter>action</Filter>
     </ClCompile>
-    <ClCompile Include="step\KeepAliveOperationActionStep.cpp">
-      <Filter>step</Filter>
-    </ClCompile>
-    <ClCompile Include="step\KeepAliveOperationActionWaitStep.cpp">
-      <Filter>step</Filter>
-    </ClCompile>
-    <ClCompile Include="step\KeepAliveOperationActionKeyDownStep.cpp">
-      <Filter>step</Filter>
-    </ClCompile>
-    <ClCompile Include="step\KeepAliveOperationActionKeyUpStep.cpp">
-      <Filter>step</Filter>
-    </ClCompile>
-    <ClCompile Include="action\KeepAliveOperationSequenceActionSteps.cpp">
+    <ClCompile Include="action\OperationKeyDownAction.cpp">
       <Filter>action</Filter>
     </ClCompile>
-    <ClCompile Include="action\KeepAliveOperationSequenceActionStepsImpl.cpp">
+    <ClCompile Include="action\OperationKeyUpAction.cpp">
+      <Filter>action</Filter>
+    </ClCompile>
+    <ClCompile Include="action\OperationSequenceAction.cpp">
+      <Filter>action</Filter>
+    </ClCompile>
+    <ClCompile Include="action\OperationKeyPressAction.cpp">
       <Filter>action</Filter>
     </ClCompile>
   </ItemGroup>
@@ -69,9 +54,6 @@
     </Filter>
     <Filter Include="action">
       <UniqueIdentifier>{46403d46-ef29-4470-99b2-686896564320}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="step">
-      <UniqueIdentifier>{2d93ea5b-cb16-4884-9308-9cb86f1a9623}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -94,40 +76,25 @@
     <ClInclude Include="controller\KeepAliveOperationController.h">
       <Filter>controller</Filter>
     </ClInclude>
-    <ClInclude Include="action\KeepAliveOperationJumpAction.h">
-      <Filter>action</Filter>
-    </ClInclude>
-    <ClInclude Include="action\KeepAliveOperationIdleAction.h">
-      <Filter>action</Filter>
-    </ClInclude>
-    <ClInclude Include="action\KeepAliveOperationAction.h">
-      <Filter>action</Filter>
-    </ClInclude>
     <ClInclude Include="factory\KeepAliveOperationActionFactory.h">
       <Filter>factory</Filter>
     </ClInclude>
-    <ClInclude Include="action\KeepAliveOperationForwardAction.h">
+    <ClInclude Include="action\OperationAction.h">
       <Filter>action</Filter>
     </ClInclude>
-    <ClInclude Include="action\KeepAliveOperationSequenceAction.h">
+    <ClInclude Include="action\OperationWaitAction.h">
       <Filter>action</Filter>
     </ClInclude>
-    <ClInclude Include="step\KeepAliveOperationActionStep.h">
-      <Filter>step</Filter>
-    </ClInclude>
-    <ClInclude Include="step\KeepAliveOperationActionWaitStep.h">
-      <Filter>step</Filter>
-    </ClInclude>
-    <ClInclude Include="step\KeepAliveOperationActionKeyDownStep.h">
-      <Filter>step</Filter>
-    </ClInclude>
-    <ClInclude Include="step\KeepAliveOperationActionKeyUpStep.h">
-      <Filter>step</Filter>
-    </ClInclude>
-    <ClInclude Include="action\KeepAliveOperationSequenceActionSteps.h">
+    <ClInclude Include="action\OperationKeyDownAction.h">
       <Filter>action</Filter>
     </ClInclude>
-    <ClInclude Include="action\KeepAliveOperationSequenceActionStepsImpl.h">
+    <ClInclude Include="action\OperationKeyUpAction.h">
+      <Filter>action</Filter>
+    </ClInclude>
+    <ClInclude Include="action\OperationSequenceAction.h">
+      <Filter>action</Filter>
+    </ClInclude>
+    <ClInclude Include="action\OperationKeyPressAction.h">
       <Filter>action</Filter>
     </ClInclude>
   </ItemGroup>
