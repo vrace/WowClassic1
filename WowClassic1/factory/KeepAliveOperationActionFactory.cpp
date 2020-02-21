@@ -9,6 +9,7 @@ static enum AvailableAction
 	aaIdle,
 	aaJump,
 	aaForward,
+	aaBackward,
 
 	aaItemCount,
 };
@@ -38,6 +39,9 @@ OperationAction* KeepAliveOperationActionFactory::create()
 
 	case aaForward:
 		return new OperationKeyPressAction('W');
+
+	case aaBackward:
+		return new OperationKeyPressAction('S');
 
 	default:
 		break;
