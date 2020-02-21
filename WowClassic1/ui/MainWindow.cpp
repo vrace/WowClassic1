@@ -11,6 +11,7 @@
 #include "ChooseOperationWindow.h"
 
 static WowOperation theOperation = woIdle;
+static bool theOperationActivated = false;
 static std::unique_ptr<OperationController> theControllers[woOperationCount];
 static LARGE_INTEGER theFrequency;
 static LARGE_INTEGER theTick;
@@ -22,6 +23,7 @@ void MainWindowInit(HWND hwnd)
 	theControllers[woKeepAlive].reset(new KeepAliveOperationController());
 
 	theOperation = woIdle;
+	theOperationActivated = false;
 	theControllers[theOperation]->enter();
 
 	QueryPerformanceFrequency(&theFrequency);
@@ -32,6 +34,8 @@ void MainWindowInit(HWND hwnd)
 	SendMessage(hwnd, WM_SETICON, ICON_SMALL, (LPARAM)hIcon);
 
 	SetTimer(hwnd, WM_TIMER + 100, 100, NULL);
+
+	RegisterHotKey(hwnd, 1234, MOD_CONTROL | MOD_SHIFT, VK_F10);
 }
 
 void MainWindowChangeOperation(HWND hwnd)
@@ -40,6 +44,7 @@ void MainWindowChangeOperation(HWND hwnd)
 	if (op >= 0 && op != theOperation)
 	{
 		theOperation = op;
+		theOperationActivated = false;
 		theControllers[theOperation]->enter();
 	}
 }
@@ -69,10 +74,18 @@ void MainWindowTick(HWND hwnd)
 	LARGE_INTEGER current;
 	QueryPerformanceCounter(&current);
 
-	double elapsed = (double)(current.QuadPart - theTick.QuadPart) / (double)theFrequency.QuadPart;
-	theControllers[theOperation]->tick(elapsed);
+	if (theOperationActivated)
+	{
+		double elapsed = (double)(current.QuadPart - theTick.QuadPart) / (double)theFrequency.QuadPart;
+		theControllers[theOperation]->tick(elapsed);
+	}
 
 	theTick = current;
+}
+
+void MainWindowHotKey(WORD modifiers, WORD keyCode)
+{
+	theOperationActivated = !theOperationActivated;
 }
 
 INT_PTR CALLBACK MainWindowProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
@@ -88,6 +101,10 @@ INT_PTR CALLBACK MainWindowProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lPar
 
 	case WM_TIMER:
 		MainWindowTick(hwnd);
+		return TRUE;
+
+	case WM_HOTKEY:
+		MainWindowHotKey(HIWORD(lParam), LOWORD(lParam));
 		return TRUE;
 
 	default:
